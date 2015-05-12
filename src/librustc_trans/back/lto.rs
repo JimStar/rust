@@ -170,6 +170,7 @@ pub fn run(sess: &session::Session, llmod: ModuleRef,
             config::Less => 1,
             config::Default => 2,
             config::Aggressive => 3,
+            config::Extreme => 3,
         };
 
         let builder = llvm::LLVMPassManagerBuilderCreate();

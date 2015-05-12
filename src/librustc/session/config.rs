@@ -52,7 +52,8 @@ pub enum OptLevel {
     No, // -O0
     Less, // -O1
     Default, // -O2
-    Aggressive // -O3
+    Aggressive, // -O3
+    Extreme // -O4
 }
 
 #[derive(Clone, Copy, PartialEq)]
@@ -930,9 +931,10 @@ pub fn build_session_options(matches: &getopts::Matches) -> Options {
                 Some(1) => Less,
                 Some(2) => Default,
                 Some(3) => Aggressive,
+                Some(4) => Extreme,
                 Some(arg) => {
                     early_error(&format!("optimization level needs to be \
-                                          between 0-3 (instead was `{}`)",
+                                          between 0-4 (instead was `{}`)",
                                          arg));
                 }
             }

@@ -959,7 +959,8 @@ fn link_args(cmd: &mut Command,
         // GNU-style linkers support optimization with -O. GNU ld doesn't need a
         // numeric argument, but other linkers do.
         if sess.opts.optimize == config::Default ||
-           sess.opts.optimize == config::Aggressive {
+           sess.opts.optimize == config::Aggressive ||
+           sess.opts.optimize == config::Extreme {
             cmd.arg("-Wl,-O1");
         }
     }

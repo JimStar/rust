@@ -87,6 +87,8 @@ use syntax::parse::token;
 use std::iter::repeat;
 use std::mem;
 
+use session::config;
+
 // Destinations
 
 // These are passed around by the code generating functions to track the
@@ -764,23 +766,25 @@ fn trans_index<'blk, 'tcx>(bcx: Block<'blk, 'tcx>,
             debug!("trans_index: base {}", bcx.val_to_string(base));
             debug!("trans_index: len {}", bcx.val_to_string(len));
 
-            let bounds_check = ICmp(bcx,
-                                    llvm::IntUGE,
-                                    ix_val,
-                                    len,
+            if bcx.sess().opts.optimize != config::Extreme {
+                let bounds_check = ICmp(bcx,
+                                        llvm::IntUGE,
+                                        ix_val,
+                                        len,
+                                        index_expr_debug_loc);
+                let expect = ccx.get_intrinsic(&("llvm.expect.i1"));
+                let expected = Call(bcx,
+                                    expect,
+                                    &[bounds_check, C_bool(ccx, false)],
+                                    None,
                                     index_expr_debug_loc);
-            let expect = ccx.get_intrinsic(&("llvm.expect.i1"));
-            let expected = Call(bcx,
-                                expect,
-                                &[bounds_check, C_bool(ccx, false)],
-                                None,
-                                index_expr_debug_loc);
-            bcx = with_cond(bcx, expected, |bcx| {
-                controlflow::trans_fail_bounds_check(bcx,
-                                                     expr_info(index_expr),
-                                                     ix_val,
-                                                     len)
-            });
+                bcx = with_cond(bcx, expected, |bcx| {
+                    controlflow::trans_fail_bounds_check(bcx,
+                                                         expr_info(index_expr),
+                                                         ix_val,
+                                                         len)
+                });
+            }
             let elt = InBoundsGEP(bcx, base, &[ix_val]);
             let elt = PointerCast(bcx, elt, type_of::type_of(ccx, unit_ty).ptr_to());
             Datum::new(elt, unit_ty, LvalueExpr)

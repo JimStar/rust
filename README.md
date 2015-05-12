@@ -1,9 +1,61 @@
-# The Rust Programming Language
+# The Optimized Rust Programming Language
 
-This is a compiler for Rust, including standard libraries, tools and
-documentation. Rust is a systems programming language that is fast,
-memory safe and multithreaded, but does not employ a garbage collector
-or otherwise impose significant runtime overhead.
+Added optimization level **4** (`-C opt-level=4`), which disables the bounds checks for arrays elements access. So, some code with a lot of arrays elements access by arbitrary indexes in cycles - runs faster.
+
+# Further work:
+
+I'm considering to remove this new "option" and just fix the broken rust logic later: implement the strict requirement for **access of non-overloaded array elements by index** to be placed **inside "unsafe" blocks**. As this is logically the same operation as dereferencing an arbitrary pointer. So it is inconsistent to force "access by dereferencing the pointer" to be strictly "unsafe", but access to the same memory by arbitrary array index to be "safe" (trying to "fix" it by resource-hungry repeated run-time bounds checks, steeling the resources from something more useful).
+After the array access by non-overloaded index will be considered "unsafe" the run-time bounds checks will not be needed at all and will be removed completely. So, this optimization level **4** will be removed too.
+
+# Just to be clear:
+
+I'm doing this **for my own use**, as I like this way more, and I don't like to spend any runtime resources on a lot of unnecessary checks. So, I don't intend to convince anybody in this approach or argue with anybody. I'm just going **to use** this version of language **on my own** for my **resource critical** projects, where I have better things to do for the proccessor than sitting in repeating unnecessary run-time bounds checks during a lot of huge cycles with random data accesses in them.
+But if you need these "`unsafe_ref()`" or "`unsafe_mut_ref()`" to eliminate these checks inside "unsafe" blocks - you just totally lose the convenient `[]` indexing syntax, as you will never use it throughout the whole code in time critical software - you will just always go into "unsafe" block and use e.g. "`some_vector.unsafe_mut_ref(idx)`" instead of the same logically unsafe but more readable "`some_vector[idx]`". But if you are trying to migrate from C or C++ to rust - you almost always intend to write the "time critical software", do you?..
+
+# Just a little test:
+
+```
+#![feature(std_misc)]
+#![feature(collections)]
+use std::time::duration::Duration;
+
+fn bound_check_test() -> Vec<u32> {
+    let mut cur_vec = vec![];
+    cur_vec.resize(100000, 1u32);
+
+    for i in 0..100000 {
+        for k in 0..i+1 {
+            cur_vec[i] += cur_vec[k];
+        }
+    }
+    return cur_vec;
+}
+
+fn main() {
+    let mut tot: i64 = 0;
+    for i in 0..10 {
+        println!("Test iteration: {}", i+1);
+        tot += Duration::span(|| {let a = bound_check_test()[0]; if a > 0 {return;}}).num_milliseconds();
+    }
+    tot /= 10;
+
+    println!("TEST RESULT (one iteration): {} ms", tot);
+}
+```
+
+On my i7 (32GB memory) machine, compiled with:
+```
+rustc -C opt-level=4 test.rs
+```
+gives one iteration time about **2700 ms**.
+Compiled with:
+```
+rustc -C opt-level=3 test.rs
+```
+gives about **9900 ms**!
+
+So, all these "*the bounds-checked code gives almost invisible drop in speed*" - is a total bullshit.
+
 
 ## Quick Start
 
@@ -29,7 +81,7 @@ Read ["Installing Rust"] from [The Book].
    $ cd rust
    ```
 
-[source]: https://github.com/rust-lang/rust
+[source]: https://github.com/JimStar/rust
 
 3. Build and install:
 

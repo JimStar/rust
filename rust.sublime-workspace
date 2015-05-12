@@ -1,0 +1,532 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/librustc/session/config.rs",
+			"settings":
+			{
+				"buffer_size": 45627,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 81.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"set syn",
+				"Set Syntax: Textile"
+			],
+			[
+				"pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: up",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Contrins",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"hex",
+				"Hex Viewer: Toggle Hex View"
+			],
+			[
+				"lin",
+				"Line Ending: Unix"
+			],
+			[
+				"li",
+				"Line Ending: Unix"
+			],
+			[
+				"line",
+				"Line Ending: Unix"
+			],
+			[
+				"Package Conins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Upgrade Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/CProjects/MayaPlugin/OctanePlugin/TODO.txt",
+		"/C/CProjects/BlenderSVN/GitHub/.git/COMMIT_EDITMSG",
+		"/C/CProjects/BlenderSVN/_Current/.git/TAG_EDITMSG",
+		"/C/CProjects/BlenderSVN/_Current/.git/COMMIT_EDITMSG",
+		"/C/CProjects/OctaneServer/.git/TAG_EDITMSG",
+		"/C/CProjects/OctaneServer/.git/COMMIT_EDITMSG",
+		"/C/CProjects/MayaPlugin/.git/TAG_EDITMSG",
+		"/C/CProjects/MayaPlugin/.git/COMMIT_EDITMSG",
+		"/C/CProjects/MaxPlugin/.git/TAG_EDITMSG",
+		"/C/CProjects/MaxPlugin/.git/COMMIT_EDITMSG",
+		"/C/CProjects/OctaneSDK/version.sh",
+		"/C/CProjects/OctaneSDK/version.nsh",
+		"/C/Renders/1.png",
+		"/C/CProjects/MaxPlugin/Setup/Setup.nsi",
+		"/C/CProjects/MayaPlugin/OctanePlugin/Setup/SetupVR.nsi",
+		"/C/CProjects/MayaPlugin/.gitignore",
+		"/C/CProjects/MayaPlugin/OctanePlugin/Setup/SetupDemo.nsi",
+		"/C/CProjects/MayaPlugin/OctanePlugin/Setup/Setup.nsi",
+		"/C/CProjects/MayaPlugin/OctanePlugin/OctanePlugin.vcxproj",
+		"/C/CProjects/MayaPlugin/OctanePlugin.sln",
+		"/C/CProjects/MayaPlugin/OctanePlugin/Setup/Manual.url",
+		"/C/CProjects/MaxPlugin/TODO.txt",
+		"/C/CProjects/BlenderSVN/_Current/Setup/blender_version.nsh",
+		"/C/CProjects/BlenderSVN/_Current/.git/config",
+		"/C/CProjects/BlenderSVN/_Current/.gitignore",
+		"/C/CProjects/MaxPlugin/Octane3dsmax.sln",
+		"/C/CProjects/MaxPlugin/Setup/SetupDemo.nsi",
+		"/C/Program Files/TotalCmd/Plugins/PEview/PEViewer.wlx64",
+		"/C/CProjects/MaxPlugin/Setup/version.nsh",
+		"/C/CProjects/OctaneServer/OctaneServer/OctaneSDK/version.sh",
+		"/C/CProjects/OctaneServer/OctaneServer/OctaneSDK/version.nsh",
+		"/C/CProjects/OctaneServer/Setup/version.nsh",
+		"/C/CProjects/MaxPlugin/Octane3dsmax.vcxproj.user",
+		"/C/Users/d.starostin/BTSync/reg_data.txt",
+		"/C/CProjects/MaxPlugin/MaxSDK/2015/lib/x64/bmm.lib",
+		"/C/CProjects/MaxPlugin/props/debug.props",
+		"/C/CProjects/MaxPlugin/props/release.props",
+		"/C/CProjects/MaxPlugin/props/x32.props",
+		"/C/CProjects/MaxPlugin/props/x64.props",
+		"/S/temp/2Dmitriy/Octane3dMaxSetup/resource.h",
+		"/S/temp/2Dmitriy/Octane3dMaxSetup/Octane3dsMaxSetup.h",
+		"/C/CProjects/OctaneServer/OctaneServer/TODO.txt",
+		"/S/Software/Motion Builder/serial.txt",
+		"/C/CProjects/MaxPlugin/Setup/Icons/Manual.url",
+		"/C/CProjects/MaxPlugin/Octane3dsmax.rc",
+		"/C/CProjects/MaxPlugin/.gitignore",
+		"/C/dev/clean/MaxPlugin/3dsMax/src/Cameras/OctaneCamera.cpp",
+		"/C/CProjects/MaxPlugin/Octane3dsmax.vcxproj",
+		"/C/CProjects/MaxPlugin/props/demo.props",
+		"/C/CProjects/MaxPlugin/.gitattributes",
+		"/C/CProjects/MaxPlugin/Octane3dsmax.vcxproj.filters",
+		"/C/Renders/edge rounding problem for jim.orbx",
+		"/C/dev/clean/MaxPlugin/3dsMax/resource.h",
+		"/C/CProjects/MaxPlugin/resource.h",
+		"/C/dev/clean/MaxPlugin/3dsMax/props/debug.props",
+		"/C/dev/clean/MaxPlugin/3dsMax/props/x64.props",
+		"/C/dev/clean/MaxPlugin/3dsMax/props/x32.props",
+		"/C/dev/clean/MaxPlugin/3dsMax/props/release.props",
+		"/C/dev/clean/MaxPlugin/3dsMax/Octane3dsmax.vcxproj",
+		"/C/dev/clean/MaxPlugin/3dsMax/Octane3dsmax.vcproj.Andrey-PC.Andrey.user",
+		"/C/CProjects/MaxPlugin/Setup/OctaneRender(R)_for_3dsMax(R)_LICENSE.txt",
+		"/S/temp/2Dmitriy/Octane3dMaxSetup/text1.bin",
+		"/C/dev/clean/MaxPlugin/3dsMax/Octane3dsmax.vcxproj.bak",
+		"/C/dev/clean/MaxPlugin/3dsMax/MaxSDK/2015/ProjectSettings/propertySheets/3dsmax.common.tools.settings.props",
+		"/C/Program Files/Autodesk/3ds Max 2014 SDK/plugin/x64/Release/en-US/widget.dlo.mui",
+		"/C/dev/clean/MaxPlugin/3dsMax/plugin_64.props",
+		"/C/dev/clean/3dsMax/Octane3dsmax.sln",
+		"/C/dev/clean/3dsMax/Octane3dsmax.vcproj.Andrey-PC.Andrey.user",
+		"/C/dev/clean/3dsMax/Octane3dsmax.vcproj",
+		"/C/CProjects/MayaPlugin/OctanePlugin/NodeGradientTexture.cpp",
+		"/C/CProjects/BlenderSVN/_Current/blender/release/scripts/startup/bl_ui/space_mat_livedb.py",
+		"/C/Program Files/Autodesk/Maya2015/scripts/AETemplates/AEcameraTemplateCommon.mel",
+		"/C/Var/FOR_OTOY/export.orbx",
+		"/C/CProjects/BlenderSVN/_Current/Setup/version.nsh",
+		"/C/CProjects/BlenderSVN/_Current/blender/intern/octane/blender/render/camera.h",
+		"/C/dev/clean/server/server.h",
+		"/C/CProjects/MayaPlugin/OctanePlugin/Scripts/2015/AEtransformTemplate.mel",
+		"/C/CProjects/MayaPlugin/OctanePlugin/Scripts/2014/AEtransformTemplate.mel",
+		"/C/CProjects/MayaPlugin/OctanePlugin/Scripts/2014/AEpfxHairTemplate.mel",
+		"/C/CProjects/BlenderSVN/_Current/scripts.sublime-project",
+		"/S/BlenderPlugin/FlySprayUsers.txt",
+		"/C/CProjects/BlenderSVN/_Current/Setup/OSX/Distribution.xml",
+		"/C/Renders/Glass-Water-r5.obj",
+		"/C/CProjects/BlenderSVN/_Current/blender/source/blender/datatoc/CMakeLists.txt",
+		"/C/dev/clean/trunk/installer/osx/build_dmg.sh",
+		"/C/CProjects/BlenderSVN/_Current/blender/source/creator/CMakeLists.txt",
+		"/C/CProjects/MayaPlugin/OctanePlugin/CMakeLists.txt",
+		"/C/CProjects/MayaPlugin/Makefile",
+		"/C/CProjects/MayaPlugin/OctanePlugin/Makefile",
+		"/C/CProjects/BlenderSVN/_Current/Setup/Linux/setup_demo.sh",
+		"/C/CProjects/BlenderSVN/_Current/blender/CMakeLists.txt",
+		"/C/CProjects/BlenderSVN/_Current/Setup/Linux/setup.sh",
+		"/C/CProjects/BlenderSVN/_Current/blender/intern/cycles/app/CMakeLists.txt",
+		"/C/CProjects/MayaPlugin/OctanePlugin/Main.h",
+		"/C/CProjects/OctaneSDK/include/octaneapi.h",
+		"/C/CProjects/mb_plugin/OctaneRenderer.sln",
+		"/C/Program Files/Autodesk/Maya2015/devkit/ExternalWebBrowser/Windows/src/PlugIn/main.cpp",
+		"/C/CProjects/OctaneServer/.git/config",
+		"/C/CProjects/OctaneSDK/.git/config",
+		"/C/CProjects/OctaneSDK/.git/COMMIT_EDITMSG",
+		"/C/CProjects/mb_plugin/.git/config",
+		"/C/CProjects/MayaPlugin/.git/config",
+		"/C/Users/d.starostin/.gitconfig",
+		"/C/CProjects/BlenderSVN/_Current/lib/win64_vc12/boost/include/boost/thread/win32/thread_heap_alloc.hpp",
+		"/C/CProjects/BlenderSVN/_Current/blender/intern/octane/blender/CMakeLists.txt",
+		"/C/CProjects/BlenderSVN/_Current/blender/intern/octane/blender/memleaks_check.h",
+		"/C/CProjects/MayaPlugin/OctanePlugin/OctaneSDK/include/octaneapi.h",
+		"/C/CProjects/MayaPlugin/OctanePlugin/Resources/Resources.h",
+		"/C/CProjects/MayaPlugin/OctanePlugin/pluginMain.cpp",
+		"/C/CProjects/MayaPlugin/OctanePlugin/datatoc.bat",
+		"/C/dev/clean/trunk/CMakeLists.txt",
+		"/C/CProjects/BlenderSVN/_Current/buildvs/source/creator/cmake_install.cmake",
+		"/C/CProjects/BlenderSVN/_Current/buildvs/cmake_install.cmake",
+		"/C/CProjects/BlenderSVN/_Current/blender/source/blender/blenkernel/CMakeLists.txt",
+		"/C/CProjects/BlenderSVN/_Current/blender/source/blender/editors/space_mat_livedb/CMakeLists.txt",
+		"/C/CProjects/BlenderSVN/trunk/lib/darwin-9.x.universal/boost/include/boost/asio/basic_deadline_timer.hpp",
+		"/C/CProjects/BlenderSVN/_Current/blender/source/blender/nodes/CMakeLists.txt",
+		"/C/CProjects/BlenderSVN/_Current/blender/intern/octane/CMakeLists.txt",
+		"/C/CProjects/MayaPlugin/CMakeLists.txt",
+		"/S/Releases SDK/codes.odt",
+		"/C/CProjects/MayaPlugin/OctanePlugin/OctaneSDK/include/octaneversion.h",
+		"/C/Var/MayaScenes/OCTANE_TO_SEND/PROBLEM_01__MAYA__MOVABLE_PROXY_MULTIBALLS_CRASH/anm_SC010_v04.ma",
+		"/C/CProjects/OctaneServer/OctaneServer/CMakeLists.txt",
+		"/C/dev/clean/trunk/installer/linux/create-linux-archive.py",
+		"/C/dev/clean/trunk/installer/osx/build_sdk_zip.sh",
+		"/C/dev/clean/trunk/installer/windows/pack-sdk-zip.cmd",
+		"/C/CProjects/BlenderSVN/_Current/TODO.txt",
+		"/C/dev/clean/trunk/make-release-windows.cmd"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"describe_lints",
+			"vr",
+			"x32",
+			"Release20",
+			"OctaneSDK\\lib\\windows",
+			"2012",
+			"win32",
+			"Manual",
+			"pdf",
+			"manu",
+			"32",
+			"2010",
+			"32",
+			"2010",
+			"/clr",
+			"C:\\Program Files\\Autodesk\\3ds Max $(Configuration.Substring(0,4))\\plugins\\Octane3dsmax.dlr",
+			"2015",
+			"2013",
+			"14.0",
+			"INSTDIR2012",
+			"INSTDIR2014x64",
+			"2014",
+			"2015",
+			"2014",
+			"goto",
+			"3ds Max ",
+			"FindInstallDirectory",
+			"SelectVersions",
+			"SetDefaultPaths",
+			"FindInstallDirectory",
+			"SelectVersions",
+			"INSTDIR2010x32",
+			"2012",
+			"inline",
+			"manual",
+			"v2.58",
+			"OctaneMax Plugin v2.58 beta.pdf",
+			"v2.58",
+			"manual",
+			"info",
+			"openmp",
+			"MP",
+			"__STDC_LIMIT_MACROS",
+			"programFiles",
+			"2015_Debug",
+			"$(PlatformArchitecture)",
+			"post",
+			";end=p_end",
+			"v100",
+			"dlr",
+			"dll",
+			"dlr",
+			"a8a44ab5b5ad",
+			"ItemGroup",
+			"IDB_OCTANELOGO_MINI",
+			"OCTANELOGO",
+			"IDB_OCTANELOGO",
+			"Logo",
+			"LogoMini",
+			"_demo",
+			"_Debug",
+			"release_dll",
+			"Octane3dsmax.dlr",
+			"Logo",
+			"Octane3dsmax.dlr",
+			"maya",
+			"OctanePlugin.mll",
+			"bin\\plug-ins",
+			"\\Setup\\InstallPath",
+			"Maya",
+			"2012",
+			"2010",
+			"OctanePlugin.mll",
+			"2013",
+			"INSTDIR2010x32",
+			"$INSTDIR2013x32",
+			"INSTDIR2010x32",
+			"Otoy_octane3dsmax_splash_mini_src.bmp",
+			"Otoy_octane3dsmax_splash_src.bmp",
+			"ConfigurationType",
+			"RandomizedBaseAddress",
+			"BaseAddress",
+			"StripPrivateSymbols",
+			"ProgramDatabaseFile",
+			"RandomizedBaseAddress",
+			"SubSystem",
+			"GenerateDebugInformation",
+			"LinkIncremental",
+			"TreatWarningAsError",
+			"\n      ",
+			"MultiProcessorCompilation",
+			"EnableEnhancedInstructionSet",
+			"PrecompiledHeader",
+			"UseFullPaths",
+			"RuntimeTypeInfo",
+			"AdditionalUsingDirectories",
+			"WholeProgramOptimization",
+			"DebugInformationFormat",
+			"$(MAX_YEAR_VERSION)",
+			"MAX_YEAR_VERSION",
+			">\n",
+			"MAX_PLATFORM",
+			"Optimization",
+			"p_end",
+			"debug",
+			"release",
+			"20",
+			"TargetMachine",
+			"2011",
+			"ObjectFileName",
+			"ProgramDatabaseFile",
+			"PrecompiledHeaderOutputFile",
+			"<ProgramDatabaseFile>",
+			"ProgramDatabaseFile",
+			"ProgramDataBaseFileName",
+			".\\Release",
+			"Debug",
+			"maxsdk",
+			"hybr",
+			"2015|",
+			"ProjectSettings",
+			"AdditionalCompilerOptions64",
+			"C:\\Program Files (x86)\\Autodesk\\3ds Max 2012\\maxsdk",
+			"3ds Max 2012",
+			"\\Win32",
+			"$(OCTANEPATH)",
+			"$(MAX_SDK_PATH)",
+			".vc"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			".o",
+			"",
+			"_buildOSX",
+			"OctaneSDK\\include",
+			"OctaneSDK\\lib\\windows",
+			"OctaneSDK"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/librustc/session/config.rs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 45627,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1485,
+								1485
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rust/Rust.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 640.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "rust.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 284.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

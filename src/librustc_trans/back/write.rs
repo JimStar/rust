@@ -162,6 +162,7 @@ fn get_llvm_opt_level(optimize: config::OptLevel) -> llvm::CodeGenOptLevel {
       config::Less => llvm::CodeGenLevelLess,
       config::Default => llvm::CodeGenLevelDefault,
       config::Aggressive => llvm::CodeGenLevelAggressive,
+      config::Extreme => llvm::CodeGenLevelAggressive,
     }
 }
 
@@ -1012,9 +1013,11 @@ unsafe fn configure_llvm(sess: &Session) {
     // slp vectorization at O3
     let vectorize_loop = !sess.opts.cg.no_vectorize_loops &&
                          (sess.opts.optimize == config::Default ||
-                          sess.opts.optimize == config::Aggressive);
+                          sess.opts.optimize == config::Aggressive ||
+                          sess.opts.optimize == config::Extreme);
     let vectorize_slp = !sess.opts.cg.no_vectorize_slp &&
-                        sess.opts.optimize == config::Aggressive;
+                        (sess.opts.optimize == config::Aggressive ||
+			 sess.opts.optimize == config::Extreme);
 
     let mut llvm_c_strs = Vec::new();
     let mut llvm_args = Vec::new();
