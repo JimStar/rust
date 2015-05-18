@@ -28,7 +28,7 @@
 //!
 //! The standard library is minimal, a set of battle-tested
 //! core types and shared abstractions for the [broader Rust
-//! ecosystem][https://crates.io] to build on.
+//! ecosystem](https://crates.io) to build on.
 //!
 //! The [primitive types](#primitives), though not defined in the
 //! standard library, are documented here, as are the predefined
@@ -40,7 +40,7 @@
 //! [`result`](result/index.html) modules define optional and
 //! error-handling types, `Option` and `Result`. The
 //! [`iter`](iter/index.html) module defines Rust's iterator trait,
-//! [`Iterater`](iter/trait.Iterator.html), which works with the `for`
+//! [`Iterator`](iter/trait.Iterator.html), which works with the `for`
 //! loop to access collections.
 //!
 //! The common container type, `Vec`, a growable vector backed by an array,
@@ -60,7 +60,7 @@
 //! [`FromStr`](str/trait.FromStr.html) trait.
 //!
 //! Data may be shared by placing it in a reference-counted box or the
-//! [`Rc`][rc/index.html] type, and if further contained in a [`Cell`
+//! [`Rc`](rc/index.html) type, and if further contained in a [`Cell`
 //! or `RefCell`](cell/index.html), may be mutated as well as shared.
 //! Likewise, in a concurrent setting it is common to pair an
 //! atomically-reference-counted box, [`Arc`](sync/struct.Arc.html),
@@ -97,7 +97,7 @@
 #![crate_type = "rlib"]
 #![crate_type = "dylib"]
 #![doc(html_logo_url = "http://www.rust-lang.org/logos/rust-logo-128x128-blk-v2.png",
-       html_favicon_url = "http://www.rust-lang.org/favicon.ico",
+       html_favicon_url = "https://doc.rust-lang.org/favicon.ico",
        html_root_url = "http://doc.rust-lang.org/nightly/",
        html_playground_url = "http://play.rust-lang.org/")]
 #![doc(test(no_crate_inject, attr(deny(warnings))))]

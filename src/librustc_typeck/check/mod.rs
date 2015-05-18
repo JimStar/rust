@@ -3082,8 +3082,8 @@ fn check_expr_with_unifier<'a, 'tcx, F>(fcx: &FnCtxt<'a, 'tcx>,
           let mut checked = false;
           opt_place.as_ref().map(|place| match place.node {
               ast::ExprPath(None, ref path) => {
-                  // FIXME(pcwalton): For now we hardcode the two permissible
-                  // places: the exchange heap and the managed heap.
+                  // FIXME(pcwalton): For now we hardcode the only permissible
+                  // place: the exchange heap.
                   let definition = lookup_full_def(tcx, path.span, place.id);
                   let def_id = definition.def_id();
                   let referent_ty = fcx.expr_ty(&**subexpr);
@@ -3097,7 +3097,7 @@ fn check_expr_with_unifier<'a, 'tcx, F>(fcx: &FnCtxt<'a, 'tcx>,
 
           if !checked {
               span_err!(tcx.sess, expr.span, E0066,
-                  "only the managed heap and exchange heap are currently supported");
+                  "only the exchange heap is currently supported");
               fcx.write_ty(id, tcx.types.err);
           }
       }
@@ -3153,26 +3153,10 @@ fn check_expr_with_unifier<'a, 'tcx, F>(fcx: &FnCtxt<'a, 'tcx>,
                                                            Some(&**oprnd), oprnd_t, lvalue_pref) {
                             Some(mt) => mt.ty,
                             None => {
-                                let is_newtype = match oprnd_t.sty {
-                                    ty::ty_struct(did, substs) => {
-                                        let fields = ty::struct_fields(fcx.tcx(), did, substs);
-                                        fields.len() == 1
-                                        && fields[0].name ==
-                                        token::special_idents::unnamed_field.name
-                                    }
-                                    _ => false
-                                };
-                                if is_newtype {
-                                    // This is an obsolete struct deref
-                                    span_err!(tcx.sess, expr.span, E0068,
-                                        "single-field tuple-structs can \
-                                         no longer be dereferenced");
-                                } else {
-                                    fcx.type_error_message(expr.span, |actual| {
-                                        format!("type `{}` cannot be \
-                                                dereferenced", actual)
-                                    }, oprnd_t, None);
-                                }
+                                fcx.type_error_message(expr.span, |actual| {
+                                    format!("type `{}` cannot be \
+                                            dereferenced", actual)
+                                }, oprnd_t, None);
                                 tcx.types.err
                             }
                         }
@@ -3317,7 +3301,8 @@ fn check_expr_with_unifier<'a, 'tcx, F>(fcx: &FnCtxt<'a, 'tcx>,
                         if let Err(_) = fcx.mk_eqty(false, infer::Misc(expr.span),
                                                     result_type, ty::mk_nil(fcx.tcx())) {
                             span_err!(tcx.sess, expr.span, E0069,
-                                "`return;` in function returning non-nil");
+                                "`return;` in a function whose return type is \
+                                 not `()`");
                         },
                     Some(ref e) => {
                         check_expr_coercable_to_type(fcx, &**e, result_type);
@@ -5008,7 +4993,7 @@ pub fn check_intrinsic_type(ccx: &CrateCtxt, it: &ast::ForeignItem) {
             "type_name" => (1, Vec::new(), ty::mk_str_slice(tcx, tcx.mk_region(ty::ReStatic),
                                                              ast::MutImmutable)),
             "type_id" => (1, Vec::new(), ccx.tcx.types.u64),
-            "offset" => {
+            "offset" | "arith_offset" => {
               (1,
                vec!(
                   ty::mk_ptr(tcx, ty::mt {
